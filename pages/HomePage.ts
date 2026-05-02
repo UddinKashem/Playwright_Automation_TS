@@ -9,7 +9,7 @@ export class HomePage {
     readonly lnk_Challenging_DOM: Locator;
     readonly lnk_Checkboxes: Locator;
     readonly lnk_Context_Menu: Locator;
-    readonly lnk_Digest_Authentication: Locator;    
+    readonly lnk_Digest_Authentication: Locator;
     readonly lnk_Disappearing_Elements: Locator;
     readonly lnk_Drag_and_Drop: Locator;
     readonly lnk_Dropdown: Locator;
@@ -17,7 +17,7 @@ export class HomePage {
     readonly lnk_Dynamic_Controls: Locator;
     readonly lnk_Dynamic_Loading: Locator;
     readonly lnk_Entry_Ad: Locator;
-    readonly lnk_Exit_Intent: Locator; 
+    readonly lnk_Exit_Intent: Locator;
     readonly lnk_File_Download: Locator;
     readonly lnk_File_Upload: Locator;
     readonly lnk_Floating_Menu: Locator;
@@ -25,7 +25,7 @@ export class HomePage {
     readonly lnk_Form_Authentication: Locator;
     readonly lnk_Frames: Locator;
     readonly lnk_Geolocation: Locator;
-    readonly lnk_Horizontal_Slider: Locator;    
+    readonly lnk_Horizontal_Slider: Locator;
     readonly lnk_Hovers: Locator;
     readonly lnk_Infinite_Scroll: Locator;
     readonly lnk_Inputs: Locator;
@@ -33,10 +33,10 @@ export class HomePage {
     readonly lnk_Multiple_Windows: Locator;
     readonly lnk_Key_Presses: Locator;
     readonly lnk_Nested_Frames: Locator;
-    readonly lnk_Notification_Messages: Locator; 
+    readonly lnk_Notification_Messages: Locator;
     readonly lnk_Shadow_DOM: Locator;
     readonly lnk_Shifting_Content: Locator;
-    readonly lnk_Slow_Resources: Locator;    
+    readonly lnk_Slow_Resources: Locator;
     readonly lnk_Sortable_Data_Tables: Locator;
     readonly lnk_Status_Codes: Locator;
     readonly lnk_Typos: Locator;
@@ -87,9 +87,17 @@ export class HomePage {
 
     async gotoHomePage() {
         await this.page.goto('https://the-internet.herokuapp.com/');
+        await expect(this.page.getByText('Welcome')).toBeVisible();
+        await expect(this.page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
     }
 
     async navToABTesting() {
         await this.lnk_A_B_Testing.click();
+    }
+
+    async navToContextMenu() {
+        await expect(this.lnk_Context_Menu).toBeEnabled();
+        await this.lnk_Context_Menu.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/context_menu');
     }
 }
