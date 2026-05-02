@@ -21,11 +21,17 @@ test('validate context menu page', async ({ page }) => {
     });
     await contextMenuPage.hs_contexMenu.click();
     await contextMenuPage.hs_contexMenu.click({ button: 'right' });
+<<<<<<< HEAD
     await page.screenshot({ path: `screenshots/full-page-${Date.now()}.png`, fullPage: true });
     await page.screenshot({ path: '/screenShots/contextSSf.png', fullPage: true });
     const ele_Context = await contextMenuPage.hs_contexMenu;
     await ele_Context.screenshot({ path: `/screenshots/contentMenu-${Date.now()}.png` });
     await ele_Context.screenshot({ path: '/screenShots/contextSS.png' });
+=======
+    await page.screenshot({path:'C:\\Playwright\\Playwright_Automation\\screenShots\\contextSSf.png', fullPage:true});
+    const ele_Context = await contextMenuPage.hs_contexMenu;
+    await ele_Context.screenshot({path:'C:\\Playwright\\Playwright_Automation\\screenShots\\contextSS.png'});
+>>>>>>> 7961b75934baa285494cb7ffb9d2276a52b40272
     await contextMenuPage.hs_contexMenu.click();
     await contextMenuPage.hs_contexMenu.hover();
     await contextMenuPage.hs_contexMenu.dblclick();
