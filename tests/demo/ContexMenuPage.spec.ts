@@ -21,9 +21,9 @@ test('validate context menu page', async ({ page }) => {
     });
     await contextMenuPage.hs_contexMenu.click();
     await contextMenuPage.hs_contexMenu.click({ button: 'right' });
-    await page.screenshot({path:'C:\\Playwright\\Playwright_Automation\\tests\\demo\\screenShots\\contextSSf.png', fullPage:true});
+    await page.screenshot({path:'C:\\Playwright\\Playwright_Automation\\screenShots\\contextSSf.png', fullPage:true});
     const ele_Context = await contextMenuPage.hs_contexMenu;
-    await ele_Context.screenshot({path:'C:\\Playwright\\Playwright_Automation\\tests\\demo\\screenShots\\contextSS.png'});
+    await ele_Context.screenshot({path:'C:\\Playwright\\Playwright_Automation\\screenShots\\contextSS.png'});
     await contextMenuPage.hs_contexMenu.click();
     await contextMenuPage.hs_contexMenu.hover();
     await contextMenuPage.hs_contexMenu.dblclick();
