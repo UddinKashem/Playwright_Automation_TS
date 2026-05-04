@@ -14,23 +14,3 @@ export class ContexMenuPage {
 
     }
 }
-
-/*
-test('test', async ({ page }) => {
-  await page.getByRole('link', { name: 'Context Menu' }).click();
-  await page.getByRole('heading', { name: 'Context Menu' }).click();
-  await page.getByText('Right-click in the box below').click();
-  page.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
-    dialog.dismiss().catch(() => {});
-  });
-  await page.locator('#hot-spot').click({
-    button: 'right'
-  });
-  await page.locator('#hot-spot').click();
-  await page.locator('#hot-spot').hover();
-  await page.locator('#hot-spot').dblclick();
-  await page.locator('#hot-spot').click();
-});
-
-*/

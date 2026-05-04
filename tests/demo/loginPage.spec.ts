@@ -11,5 +11,5 @@ test('user can log in successfully', async ({ page }) => {
     await expect(page).toHaveTitle(/Swag Labs/);
     //await page.getByText('Swag Labs')
 
-    await page.pause();
-})
+    //await page.pause();
+});

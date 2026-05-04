@@ -100,4 +100,8 @@ export class HomePage {
         await this.lnk_Context_Menu.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/context_menu');
     }
+
+    async navToDigestAuth() {
+        await this.lnk_Digest_Authentication.click();
+    }
 }
