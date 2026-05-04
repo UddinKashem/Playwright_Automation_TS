@@ -31,5 +31,5 @@ test('validate context menu page', async ({ page }) => {
     await contextMenuPage.hs_contexMenu.dblclick();
     await contextMenuPage.hs_contexMenu.click();
 
-    //await page.pause();
+    await page.pause();
 });
