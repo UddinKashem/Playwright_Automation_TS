@@ -91,6 +91,11 @@ export class HomePage {
         await expect(this.page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
     }
 
+    async validateHomePage() {
+        await expect(this.page.getByText('Welcome')).toBeVisible();
+        await expect(this.page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
+    }
+
     async navToABTesting() {
         await this.lnk_A_B_Testing.click();
     }
