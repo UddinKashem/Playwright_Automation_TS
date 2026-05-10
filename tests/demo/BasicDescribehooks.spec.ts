@@ -27,6 +27,7 @@ test.describe('basic navigation', () => {
   test('validate writing tests page', async ({ page }) => {
     await expect(page.getByRole('link', { name: 'Get started' })).toBeEnabled();
     await page.getByRole('link', { name: 'Get started' }).click();
+    await expect(page.getByRole('link', { name: 'Writing tests', exact: true })).toBeEnabled();
     await page.getByRole('link', { name: 'Writing tests', exact: true }).click();
     await page.getByRole('heading', { name: 'Writing tests' }).click();
     await page.getByRole('heading', { name: 'IntroductionDirect link to' }).click();
