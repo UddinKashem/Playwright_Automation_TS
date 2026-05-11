@@ -110,4 +110,10 @@ export class HomePage {
     async navToDigestAuth() {
         await this.lnk_Digest_Authentication.click();
     }
+
+    async navToDynamicControls() {
+        await expect(this.lnk_Dynamic_Controls).toBeEnabled();
+        await this.lnk_Dynamic_Controls.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/dynamic_controls');
+    }
 }
