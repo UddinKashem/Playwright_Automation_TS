@@ -3,16 +3,33 @@ import { HomePage } from '../../pages/HomePage';
 import { DynamicContentPage } from '../../pages/DynamicControlsPage';
 
 
-test('Validate Dynamic Controls page', async({page}) => {
-    const homePage = new HomePage(page);
-    const dynamicControlsPage = new DynamicContentPage(page);
+test.describe('Dynamic Controls Page Validation', () => {
+    let homePage: HomePage;
+    let dynamicControlsPage: DynamicContentPage;
 
-    homePage.gotoHomePage();
-    homePage.validateHomePage();
-    homePage.navToDynamicControls();
-    dynamicControlsPage.validateDynamicControls();
+    test.beforeEach(async ({ page }) => {
+        homePage = new HomePage(page);
 
+        await homePage.gotoHomePage();
+        await homePage.validateHomePage();
+        await homePage.navToDynamicControls();
+    });
 
-    await page.pause();
+    test('Validate Dynamic Controls Page', async ({ page }) => {
+        dynamicControlsPage = new DynamicContentPage(page);
+        await dynamicControlsPage.validateDynamicControls();
+    });
 
-})
+    test('Validate Remove and Add Activity', async ({ page }) => {
+        dynamicControlsPage = new DynamicContentPage(page);
+        await dynamicControlsPage.validateDynamicControls();
+        await dynamicControlsPage.validateRemoveNAddActivity();
+    });
+
+    test('Validate Enable and Disable Activity', async ({ page }) => {
+        dynamicControlsPage = new DynamicContentPage(page);
+        await dynamicControlsPage.validateDynamicControls();
+        await dynamicControlsPage.validateEnableActivity();
+    });
+
+});
