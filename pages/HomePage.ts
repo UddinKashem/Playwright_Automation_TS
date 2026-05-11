@@ -87,6 +87,7 @@ export class HomePage {
 
     async gotoHomePage() {
         await this.page.goto('https://the-internet.herokuapp.com/');
+        await this.page.waitForURL('https://the-internet.herokuapp.com/')
         await expect(this.page.getByText('Welcome')).toBeVisible();
         await expect(this.page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
     }
