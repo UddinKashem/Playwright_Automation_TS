@@ -116,4 +116,10 @@ export class HomePage {
         await this.lnk_Dynamic_Controls.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/dynamic_controls');
     }
+
+    async navToDynamicLoadingPage(){
+        await expect(this.lnk_Dynamic_Loading).toBeVisible();
+        await this.lnk_Dynamic_Loading.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/dynamic_loading');
+    }
 }
