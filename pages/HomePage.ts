@@ -122,4 +122,10 @@ export class HomePage {
         await this.lnk_Dynamic_Loading.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/dynamic_loading');
     }
+
+    async navToEntryAdPage(){
+        await expect(this.lnk_Entry_Ad).toBeEnabled();
+        await this.lnk_Entry_Ad.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/entry_ad');
+    }
 }

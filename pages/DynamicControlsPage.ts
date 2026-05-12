@@ -74,12 +74,3 @@ export class DynamicContentPage{
         await expect(this.txt_ItsDisable).toBeInViewport();
     }
 }
-
-/*
-
-test('test', async ({ page }) => {
-  await page.getByRole('button', { name: 'Disable' }).click();
-  await page.getByText('It\'s disabled!').click();
-});
-
-*/
