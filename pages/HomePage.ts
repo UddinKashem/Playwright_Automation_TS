@@ -128,4 +128,10 @@ export class HomePage {
         await this.lnk_Entry_Ad.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/entry_ad');
     }
+
+    async navToFiledownloaderPage(){
+        await expect(this.lnk_File_Download).toBeEnabled();
+        await this.lnk_File_Download.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/download');
+    }
 }
