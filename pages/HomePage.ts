@@ -88,8 +88,6 @@ export class HomePage {
     async gotoHomePage() {
         await this.page.goto('https://the-internet.herokuapp.com/');
         await this.page.waitForURL('https://the-internet.herokuapp.com/')
-        await expect(this.page.getByText('Welcome')).toBeVisible();
-        await expect(this.page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
     }
 
     async validateHomePage() {
@@ -133,5 +131,11 @@ export class HomePage {
         await expect(this.lnk_File_Download).toBeEnabled();
         await this.lnk_File_Download.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/download');
+    }
+
+    async navToUploadFilePage(){
+        await expect(this.lnk_File_Upload).toBeEnabled();
+        await this.lnk_File_Upload.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/upload');
     }
 }
