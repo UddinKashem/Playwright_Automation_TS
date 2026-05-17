@@ -34,12 +34,3 @@ export class FileDownloaderPage {
     }
 
 }
-
-/*
-test('test', async ({ page }) => {
-  await page.getByRole('heading', { name: 'Forgot Password' }).click();
-  await page.getByText('E-mail').click();
-  await page.getByRole('textbox', { name: 'E-mail' }).click();
-  await page.getByRole('button', { name: 'Retrieve password' }).click();
-});
-*/

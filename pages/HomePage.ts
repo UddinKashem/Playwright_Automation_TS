@@ -150,4 +150,10 @@ export class HomePage {
         await this.lnk_Forgot_Password.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/forgot_password');
     }
+
+    async navToFormAuthenticationPage(){
+        await expect(this.lnk_Form_Authentication).toBeEnabled();
+        await this.lnk_Form_Authentication.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/login');
+    }
 }
