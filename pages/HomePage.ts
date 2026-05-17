@@ -138,4 +138,10 @@ export class HomePage {
         await this.lnk_File_Upload.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/upload');
     }
+
+    async navToFloatingMenuPage(){
+        await expect(this.lnk_Floating_Menu).toBeEnabled();
+        await this.lnk_Floating_Menu.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/floating_menu');
+    }
 }
