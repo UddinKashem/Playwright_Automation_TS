@@ -144,4 +144,10 @@ export class HomePage {
         await this.lnk_Floating_Menu.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/floating_menu');
     }
+
+    async navForgotPasswordPage(){
+        await expect(this.lnk_Forgot_Password).toBeEnabled();
+        await this.lnk_Forgot_Password.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/forgot_password');
+    }
 }
