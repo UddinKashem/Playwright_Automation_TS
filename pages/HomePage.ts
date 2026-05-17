@@ -156,4 +156,10 @@ export class HomePage {
         await this.lnk_Form_Authentication.click();
         await this.page.waitForURL('https://the-internet.herokuapp.com/login');
     }
+
+    async navToFrames(){
+        await expect(this.lnk_Frames).toBeEnabled({timeout: 15000});
+        await this.lnk_Frames.click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/frames');
+    }
 }
